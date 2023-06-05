@@ -1,0 +1,80 @@
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  Haversine * 3 * 3 
+  Best Cost:        14.5555252132105 
+[1] "Time:"
+   user  system elapsed 
+  65.11    6.58   71.98 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  Dropoff_hour + 3 
+  Best Cost:        17.7448156438864 
+[1] "Time:"
+   user  system elapsed 
+  65.56    8.78   74.77 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  Haversine + (3 + (Dropoff_hour - 1)) 
+  Best Cost:        17.0285068982117 
+[1] "Time:"
+   user  system elapsed 
+  65.61    8.61   76.06 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  2 + (Dropoff_hour + (2 - 0.5)) 
+  Best Cost:        17.7440369370037 
+[1] "Time:"
+   user  system elapsed 
+  73.47   10.54   94.44 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  Dropoff_hour + Haversine 
+  Best Cost:        17.1067386216389 
+[1] "Time:"
+   user  system elapsed 
+  67.53    8.14   79.45 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  0.5 * (Haversine * Pickup_hour) 
+  Best Cost:        16.0728051061263 
+[1] "Time:"
+   user  system elapsed 
+  63.52    6.52   70.26 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  Pickup_weekday + Dropoff_hour 
+  Best Cost:        17.6850566589246 
+[1] "Time:"
+   user  system elapsed 
+  62.31    6.34   68.88 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  Humid * (0.5 * Haversine/3) 
+  Best Cost:        16.4712429727042 
+[1] "Time:"
+   user  system elapsed 
+  63.67    6.46   70.36 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  0.5 * Pickup_longitude 
+  Best Cost:        17.6883428032855 
+[1] "Time:"
+   user  system elapsed 
+  62.04    6.53   68.92 
+[1] "GE:"
+Grammatical Evolution Search Results:
+  No. Generations:  40 
+  Best Expression:  3 * (2 - (Precip - 3)) 
+  Best Cost:        17.5802779299658 
+[1] "Time:"
+   user  system elapsed 
+  62.68    6.34   69.27 

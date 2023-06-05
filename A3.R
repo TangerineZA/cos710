@@ -2,12 +2,12 @@ library("gramEvol")
 
 rule_def <- list(
     expr    = grule(op(expr, expr), var, n),
-    op      = grule("+", "-", "*"),
+    op      = grule("+", "-", "*", "/"),
     var     = grule(Distance, Pickup_longitude,
      Pickup_latitude, Haversine, Pmonth, Pickup_day, Pickup_hour,
      Pickup_minute, Pickup_weekday, Dropoff_hour, Dropoff_minute,
      Temp, Precip, Wind, Humid, Solar, Snow, Dust),
-    n = grule(1, 2, 3)
+    n = grule(1, 2, 3, 0.5)
 )
 
 print("Loading in dataset...")
@@ -52,20 +52,36 @@ sym_reg_fit_func <- function(expr) {
     return(resultset)
 }
 
-ge <- GrammaticalEvolution(grammarDef = grammar_def,
-                            evalFunc = sym_reg_fit_func,
-                            terminationCost = NA,
-                            monitorFunc = print,
-                            iterations = 200,
-                            popSize = 48,
-                            numExpr = 1,
-                            mutationChance = 0.65,
-                            max.depth = GrammarGetDepth(grammar_def),
-                            startSymb = GrammarStartSymbol(grammar_def),
-                            wrappings = 3,
-                            suggestions = NULL,
-                            optimizer = c("ga"),
-                            elitism = 1,
-                            plapply = lapply,
-                            genomeLen = 100,
-                            )
+times <- list()
+best_algs <- list()
+
+
+for (x in 1:10) {
+    ptm <- proc.time()
+    ge <- GrammaticalEvolution(grammarDef = grammar_def,
+                                evalFunc = sym_reg_fit_func,
+                                terminationCost = NA,
+                                monitorFunc = print,
+                                iterations = 40,
+                                popSize = 48,
+                                numExpr = 1,
+                                mutationChance = 0.65,
+                                startSymb = GrammarStartSymbol(grammar_def),
+                                wrappings = 3,
+                                suggestions = NULL,
+                                optimizer = c("ga"),
+                                elitism = 1,
+                                plapply = lapply,
+                                )
+    elapsed <- proc.time() - ptm
+
+    append(times, elapsed)
+    append(best_algs, ge)
+
+    sink("out.txt", append = TRUE)
+    print("GE:")
+    print(ge)
+    print("Time:")
+    print(elapsed)
+    sink()
+}
